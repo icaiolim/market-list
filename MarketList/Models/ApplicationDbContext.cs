@@ -14,5 +14,8 @@ namespace MarketList.Models
         }
 
         public DbSet<Category> Category { get; set; }
+        public DbSet<Product> Product { get; set; }
+        public DbSet<ProductList> ProductList { get; set; }
+
     }
 }
