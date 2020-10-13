@@ -1,0 +1,164 @@
+﻿.market-lists {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.desktop .market-lists {
+    width: 90%;
+    margin: auto;
+}
+
+.mobile .market-lists {
+    justify-content: center;
+}
+
+.market-lists a:hover {
+    text-decoration: none;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.mobile .title {
+    padding: 30px 0;
+}
+
+.desktop .title {
+    width: 95%;
+    margin: auto;
+}
+
+.mobile .title {
+    flex-flow: column wrap;
+}
+
+.title h1 {
+    text-align: center;
+    color: #51514d;
+    font-weight: 700;
+}
+
+.mobile .title h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.title .add {
+    display: block;
+    padding: 10px 20px;
+    background: #ee8700;
+    border-radius: 10px;
+    font-weight: 700;
+    color: #f5f5f5;
+    text-decoration: none;
+    transition: ease-in .25s;
+}
+
+.title .add:hover {
+    background: #e68301;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,.1);
+}
+
+.mobile .title .add {
+    margin: 15px 0;
+}
+
+.market-list {
+    width: 290px;
+    position: relative;
+    min-height: 175px;
+    margin: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: ease-in .25s;
+}
+
+.market-list:hover {
+    background: #f67e28;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,.1);
+}
+
+.market-list a {
+    display: flex;
+    flex-flow: column nowrap;
+    color: #51514d;
+}
+
+.market-list:hover a {
+    color: #fff;
+}
+
+.mobile .market-list {
+    margin: 15px 0;
+}
+
+.market-list h3 {
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70px;
+    color: #51514d;
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.market-list:hover h3 {
+    color: #fff;
+}
+
+.product-list {
+    min-height: 100px;
+    padding: 0px 15px;
+}
+
+.product-list-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.product-list-item:first-child .product-list-name,
+.product-list-item:first-child .product-list-qty {
+    font-weight: 700;
+}
+
+.market-list hr {
+    margin: 5px 0;
+}
+
+.market-list .date-creation {
+    padding: 15px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ee8700;
+}
+
+.market-list:hover .date-creation {
+    color: #fff;
+}
+
+.market-list .delete {
+    position: absolute;
+    top: 5px;
+    right: 3px;
+}
+
+.market-list .delete button {
+    display: flex;
+    flex-flow: column;
+}
+
+.market-list .delete button i {
+    font-size: 18px;
+    color: #ee8700;
+}
+
+.market-list:hover .delete button i {
+    color: #fff;
+}

@@ -1,0 +1,48 @@
+﻿@model MarketList
+@{
+    var marketLists = ViewBag.MarketLists as IList<MarketList>;
+}
+
+@section Styles {
+    <link href="~/css/MarketList/index.css" rel="stylesheet" />
+}
+<div class="title">
+    <h1>Listas de Compras</h1>
+    <a class="add" href="/MarketList/Upsert" target="_self">Nova Lista de Compras</a>
+</div>
+<hr />
+<div class="market-lists">
+    @foreach (var item in marketLists)
+    {
+        <div class="market-list">
+            <a href="/MarketList/Item/@item.Id">
+                <h3>@item.Name</h3>
+                <div class="product-list">
+                    <div class="product-list-item">
+                        <span class="product-list-name">Produto</span>
+                        <span class="product-list-qty">Qtd</span>
+                    </div>
+                    <hr />
+                    @foreach (var productList in @item.ProductList.Take(2))
+                    {
+                        <div class="product-list-item">
+                            <span class="product-list-name">@productList.Product.Name</span>
+                            <span class="product-list-qty">@productList.Qty</span>
+                        </div>
+                    }
+                    <span class="product-list-item">...</span>
+                </div>
+                <span class="date-creation">Criada em @item.DateCreation.ToString("dd/MM/yyyy")</span>
+            </a>
+            <div class="delete">
+                <button onclick="Delete(@item.Id)" class="btn btn-sm">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    }
+</div>
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="~/js/MarketList/index.js"></script>
+}

@@ -1,0 +1,310 @@
+﻿.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.mobile .title {
+    padding: 30px 0;
+}
+
+.mobile .title {
+    flex-flow: column wrap;
+}
+
+.title h1 {
+    text-align: center;
+    color: #51514d;
+    font-weight: 700;
+}
+
+.mobile .title h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.title .add {
+    display: block;
+    padding: 10px 20px;
+    background: #ee8700;
+    border-radius: 10px;
+    font-weight: 700;
+    color: #f5f5f5;
+    text-decoration: none;
+    transition: ease-in .25s;
+}
+
+.title .add:hover {
+    background: #e68301;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,.1);
+}
+
+.mobile .title .add {
+    margin: 15px 0;
+}
+
+.categories {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    text-align: center;
+}
+
+.mobile .categories {
+    justify-content: center;
+}
+
+.desktop .categories h4 {
+    padding-right: 15px;
+}
+
+.mobile .categories h4 {
+    width: 100%;
+}
+
+.categories .category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 15px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-weight: 700;
+    color: #4f5150;
+    transition: ease-in .25s;
+}
+
+.categories .category.selected,
+.categories .category:hover {
+    background: #ef832d;
+    border-color: #ef832d;
+    color: #fff;
+    text-decoration: none;
+}
+
+.list-products {
+    width: 90%;
+    padding: 30px 0;
+    margin: auto;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.mobile .list-products {
+    width: 100%;
+}
+
+.product-list {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: ease-in .25s;
+}
+
+.mobile .product-list {
+    margin: 15px 0;
+}
+
+.desktop .product-list {
+    max-width: 1200px;
+}
+
+.product-list:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,.1);
+}
+
+.product-list:not(.checked):hover {
+    background: #ef832d;
+    border-color: #ef832d;
+}
+
+.product-list.checked {
+    background: #ccc;
+}
+
+.product-list .check input,
+.product-list .delete button
+{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100%;
+}
+
+.product-list .check input {
+    transform: scale(1.3);
+}
+
+.product-list .delete button i {
+    font-size: 18px;
+}
+
+.product-list .delete button span {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.product-list:not(.checked):hover .delete button {
+    color: #fff;
+}
+
+.mobile .product-list .check input,
+.mobile .product-list .delete button {
+    width: 60px;
+}
+
+.product-list .product {
+    width: calc(100% - 200px);
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.mobile .product-list .product {
+    width: calc(100% - 120px);
+}
+
+.mobile .product-list .product {
+    flex-flow: column wrap;
+}
+
+.product-list .product:hover {
+    text-decoration: none;
+}
+
+.product-list:not(.checked):hover .product > div {
+    color: #fff;
+}
+
+.product-list .product > div {
+    color: #4f5150;
+    padding: 15px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.desktop .product-list .product .qty {
+    width: 100px;
+}
+
+.mobile .product-list .product .qty {
+    padding-top: 0;
+}
+
+.product-list .product .qty .qty-value {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.product-list .product .qty label {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.product-list.checked .product .product-description {
+    text-decoration: line-through;
+}
+
+.desktop .product-list .product .product-description {
+    width: 100%;
+}
+
+.product-list .product .product-description h5 {
+    text-align: center;
+    font-weight: 700;
+    margin: 0;
+}
+
+.product-list .product .product-description span {
+    color:#ef832d;
+}
+
+.product-list.checked .product .product-description span {
+    color: #4f5150;
+}
+
+.product-list:not(.checked):hover .product .product-description span {
+    color: #fff;
+}
+
+.empty {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+.empty i {
+    color: #ef832d;
+    font-size: 60px;
+}
+
+.empty span {
+    padding: 15px 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.options {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+    .options > a {
+        margin: 0 10px;
+    }
+
+    .options .add {
+        display: block;
+        padding: 10px 15px;
+        background: #ee8700;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        font-weight: 700;
+        color: #f5f5f5;
+        text-align: center;
+        text-decoration: none;
+        transition: ease-in .25s;
+    }
+
+        .options .add:hover {
+            background: #e68301;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,.1);
+        }
+
+    .options .back {
+        background: #f9f9f9;
+        color: #000;
+        border: 1px solid #ccc;
+        text-align: center;
+        border-radius: 5px;
+        padding: 10px 15px;
+        transition: ease-in .25s;
+    }
+
+        .options .back:hover {
+            text-decoration: none;
+            background: #f5f5f5;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,.1);
+        }
+
+    .options .add,
+    .options .back {
+        width: 220px;
+    }
+
+.mobile .options,
+.mobile .options .add,
+.mobile .options .back {
+    width: 100%;
+    margin: 5px 0;
+}

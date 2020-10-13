@@ -1,0 +1,76 @@
+﻿@{
+    @model MarketList
+    var categories = ViewBag.Categories as List<Category>;
+    var idCategory = ViewBag.IdCategory;
+}
+@section Styles {
+    <link href="~/css/MarketList/item.css" rel="stylesheet" />
+}
+    
+<div class="title">
+    <h1>@Model.Name </h1>
+    <div class="options">
+        <a href="/ProductList/Upsert?idMarketList=@Model.Id" class="add">Adicionar Produto</a>
+        <a href="/MarketList" target="_self" class="back">Voltar</a>
+    </div>
+
+</div>
+<hr />
+<div class="categories">
+    <h4>Categorias</h4>
+    <a class="category @(idCategory == 0 ? "selected" : "")" href="/MarketList/Item/@Model.Id">Todos</a>
+    @if (categories.Count > 0)
+    {
+        foreach (var category in categories)
+        {
+            <a class="category @(category.Id == idCategory ? "selected" : "")" href="/MarketList/Item/@Model.Id?idCategory=@category.Id">
+                @category.Name
+            </a>
+        }
+    }
+</div>
+<hr />
+@if (Model.ProductList.Count > 0)
+{
+    <h4>Lista de Produtos</h4>
+    <ul class="list-products">
+        @foreach (var product in Model.ProductList)
+        {
+            <li class="product-list @(product.Checked ? "checked" : "")" data-id="@product.Id">
+                <div class="check">
+                    <input onclick="javascript:CheckItem(@product.Id)" type="checkbox" name="checked" value="@product.Checked" @(product.Checked ? "checked" : "") class="form-control" />
+                </div>
+                <a href="/ProductList/Upsert?idMarketList=@Model.Id&idProductList=@product.Id" class="product">
+                    <div class="product-description">
+                        <h5>@product.Product.Name</h5>
+                        <span class="category">@product.Product.Category.Name</span>
+                    </div>
+                    <div class="qty">
+                        <span class="qty-value">
+                            @product.Qty
+                        </span>
+                        <label>Qtd</label>
+                    </div>
+                </a>
+                <div class="delete">
+                    <button asp-page-handler="Delete" asp-route-id="@product.Id" onclick="Delete(@product.Id)" class="btn btn-sm">
+                        <i class="fas fa-trash-alt"></i>
+                        <span>Apagar</span>
+                    </button>
+                </div>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <div class="empty">
+        <i class="fas fa-shopping-basket"></i>
+        <span>Sua lista de compras está vazia.</span>
+    </div>
+}
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="~/js/MarketList/item.js"></script>
+}
